@@ -9,6 +9,10 @@ export default function ContactPage() {
   const [phone, setPhone] = useState("");
   const [requirement, setRequirement] = useState("");
 
+  const mapQuery = encodeURIComponent(`${site.address}, ${site.city}`);
+  const mapLink = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
+  const mapEmbedUrl = `https://www.google.com/maps?q=${mapQuery}&z=15&output=embed`;
+
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -70,15 +74,28 @@ export default function ContactPage() {
                 </div>
               </a>
 
-              <div className="flex items-center gap-4 p-3.5 rounded-2xl bg-[#060D17]/80 border border-[#E2BD6A]/20">
+              <a href={mapLink} target="_blank" rel="noreferrer" className="flex items-start gap-4 p-3.5 rounded-2xl bg-[#060D17]/80 border border-[#E2BD6A]/20 hover:border-[#E2BD6A]/60 transition-colors">
                 <div className="h-10 w-10 rounded-full bg-[#E2BD6A]/20 grid place-items-center text-[#E2BD6A]">
                   <MapPinIcon size={18}/>
                 </div>
                 <div>
                   <b className="block text-white text-sm">Office Location</b>
-                  <span className="text-slate-300">{site.address}</span>
+                  <span className="mt-1 block text-slate-300">{site.address}</span>
+                  <span className="mt-2 inline-flex items-center text-[10px] font-bold uppercase tracking-[.18em] text-[#E2BD6A]">
+                    Open in Google Maps
+                  </span>
                 </div>
-              </div>
+              </a>
+            </div>
+
+            <div className="mt-7 overflow-hidden rounded-2xl border border-[#E2BD6A]/25 bg-[#0A1320]">
+              <iframe
+                title="Krish Real Estate location"
+                src={mapEmbedUrl}
+                className="h-[220px] w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
 
             <a href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noreferrer" className="mt-8 btn-gold rounded-full px-6 py-3 text-xs font-bold inline-flex items-center gap-2 w-full justify-center">
