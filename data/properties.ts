@@ -79,6 +79,35 @@ export const properties: Property[] = [
       "Verified Legal Documentation",
     ],
   },
+  {
+    id: "property-03",
+    slug: "2bhk-flat-bansdroni-raifail-club-kolkata",
+    title: "2 BHK Flat in Bansdroni",
+    location: "Raifail Club, Bansdroni, Kolkata",
+    type: "2 BHK Flat",
+    status: "For Sale",
+    price: "₹38 Lakhs",
+    area: "875 sq.ft.",
+    bedrooms: 2,
+    bathrooms: 2,
+    parking: "No Parking",
+    description:
+      "Well-maintained 2 BHK flat located at Raifail Club, Bansdroni, Kolkata. The flat is situated on the 3rd floor and is the top floor of the building. Lift facility is available. The property has remained unused for approximately 4 years and is located around 1 KM from the nearest metro station.",
+    featuredImage: "/properties/property-03/cover.jpg",
+    images: [
+      "/properties/property-03/cover.jpg",
+    ],
+    highlights: [
+      "2 BHK Flat",
+      "875 sq.ft.",
+      "3rd Floor / Top Floor",
+      "Lift Available",
+      "No Parking",
+      "Unused for 4 Years",
+      "Approx. 1 KM from Metro",
+      "Bansdroni, Kolkata",
+    ],
+  },
 ];
 
 export function getProperty(slug: string) {
