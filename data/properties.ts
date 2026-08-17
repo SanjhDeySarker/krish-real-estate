@@ -87,7 +87,7 @@ export const properties: Property[] = [
     type: "2 BHK Flat",
     status: "For Sale",
     price: "₹38 Lakhs",
-    area: "87 sq.ft.",
+    area: "875 sq.ft.",
     bedrooms: 2,
     bathrooms: 2,
     parking: "No Parking",
